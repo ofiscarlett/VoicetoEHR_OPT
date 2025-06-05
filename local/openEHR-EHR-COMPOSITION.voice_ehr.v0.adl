@@ -23,8 +23,8 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"15459a7c5e99c61464dc693acf9dfb77">
 		["build_uid"] = <"b7c5300e-6a2b-3e78-8312-29e749f11500">
+		["MD5-CAM-1.0.1"] = <"c4fd9ad37d75c6ce7ed27b15cf486f1f">
 	>
 
 definition
@@ -37,7 +37,14 @@ definition
 			}
 		}
 		context matches {
-			EVENT_CONTEXT matches {*}
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0002] matches {*}    -- Item tree
+				}
+				start_time matches {
+					DV_DATE_TIME[at0004] matches {*}    -- DV_DATE_TIME
+				}
+			}
 		}
 	}
 
@@ -48,6 +55,14 @@ ontology
 				["at0000"] = <
 					text = <"Voice EHR">
 					description = <"Voice EHR">
+				>
+				["at0002"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
 				>
 			>
 		>
