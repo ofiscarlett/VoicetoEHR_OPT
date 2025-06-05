@@ -1,0 +1,54 @@
+archetype (adl_version=1.4; uid=4be680da-1ad2-41c3-9c42-cdcb25fcc0ac)
+	openEHR-EHR-COMPOSITION.voice_ehr.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-06-05">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"15459a7c5e99c61464dc693acf9dfb77">
+		["build_uid"] = <"b7c5300e-6a2b-3e78-8312-29e749f11500">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Voice EHR
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Voice EHR">
+					description = <"Voice EHR">
+				>
+			>
+		>
+	>
